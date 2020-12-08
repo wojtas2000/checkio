@@ -1,0 +1,31 @@
+def time_converter(time):
+    time_list = time.split(":")
+    hour = int(time_list[0])
+    minute = time_list[1]
+    if hour < 12:
+        a_m_p_m = " a.m."
+    else:
+        a_m_p_m = " p.m."
+
+    if hour > 12:
+        hour -= 12
+    elif hour == 0:
+        hour = 12
+    return str(hour) + ":" + minute + a_m_p_m
+
+
+if __name__ == '__main__':
+    print("Example:")
+    print(time_converter('12:30'))
+
+    # These "asserts" using only for self-checking and not necessary for auto-testing
+    assert time_converter('12:30') == '12:30 p.m.'
+    assert time_converter('09:00') == '9:00 a.m.'
+    assert time_converter('10:15') == '10:15 a.m.'
+    assert time_converter('21:15') == '9:15 p.m.'
+    assert time_converter('20:05') == '8:05 p.m.'
+    assert time_converter('17:45') == '5:45 p.m.'
+    assert time_converter('02:10') == '2:10 a.m.'
+    assert time_converter('00:00') == '12:00 a.m.'
+    assert time_converter('23:59') == '11:59 p.m.'
+    print("Coding complete? Click 'Check' to earn cool rewards!")
