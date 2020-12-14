@@ -1,10 +1,9 @@
 def checkio(words: str) -> bool:
-    napis = words.split(" ")
     value = 0
-    for i in napis:
+    for i in words.split():
         if not i.isdigit():
             value += 1
-            if value >= 3:
+            if value == 3:
                 return True
         else:
             value = 0
